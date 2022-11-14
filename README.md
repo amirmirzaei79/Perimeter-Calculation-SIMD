@@ -18,3 +18,10 @@ The second part shows whether the function uses 32 bit or 64 bit calling convent
 
 If the name has a third part (_print_edge) it means assembly code calls stdlib's printf function to print length of each edge.
 
+
+## More Details:
+**main.C** implements main function, reads the input, calls the **find_perimeter** function and writes it's result to output.
+
+Body of the **find_perimeter** function is implemented in **find_perimeter.asm** file. This function receives the x,y coordinates of the polygon vertices and returns the perimeter of the polygon. The first argument is a pointer to an array of double-precision floating-point numbers representing the x-coordinates of the polygon vertices . Similarly, the second argument gives the y-coordinates of the vertices. The third and final argument is the number of the vertices which is the same as the size of the input arrays. The function computes the length of each polygon edge (including the edge between the last and the first vertex) and if the folder container "_print_edge" in name, prints them by calling the printf function from the C standard library. Then it returns the perimeter of the polygon as a floating point number.
+
+Each folder contains a make file to compile the code inside and create **main.out** binary executable that reads vertices coordinates and prints out polygon's perimeter (and length of each edge if specified in folder name).
